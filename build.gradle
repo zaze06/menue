@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'me.alien'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:2.0.5'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
+
+    implementation 'com.pi4j:pi4j-core:2.3.0'
+    implementation 'com.pi4j:pi4j-plugin-linuxfs:2.3.0'
+    implementation 'com.pi4j:pi4j-plugin-raspberrypi:2.3.0'
+    implementation 'com.pi4j:pi4j-plugin-pigpio:2.3.0'
+
+    implementation fileTree(dir: 'libs', include: '*.jar')
+
+    implementation 'se.michaelthelin.spotify:spotify-web-api-java:7.2.2'
+
+    implementation 'org.json:json:20220924'
+}
+
+jar{
+    manifest {
+        attributes 'Main-Class': 'me.alien.menu.Main'
+        //attributes 'Main-Class': 'me.alien.lib.SSD1306_Example'
+    }
+}
