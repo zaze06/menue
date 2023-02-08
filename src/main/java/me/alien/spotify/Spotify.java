@@ -28,8 +28,6 @@ import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static me.alien.menu.Main.updateDisplay;
-import static me.alien.spotify.SpotifyTokens.CLIENT_ID;
-import static me.alien.spotify.SpotifyTokens.CLIENT_SECRET;
 
 public class Spotify extends App  /*extends JPanel*/{
     JSONObject config = Main.getConfig().getConfig("spotify");
@@ -794,8 +792,8 @@ public class Spotify extends App  /*extends JPanel*/{
             //System.out.println("Timer one is "+t1.isRunning());
 
             spotifyApi = SpotifyApi.builder()
-                    .setClientId(CLIENT_ID) // replace CLIENT_ID whit a spotify client id
-                    .setClientSecret(CLIENT_SECRET) // replace CLIENT_SECRET whit a spotify client secret
+                    .setClientId(SpotifyTokens.CLIENT_ID) // replace CLIENT_ID whit a spotify client id
+                    .setClientSecret(SpotifyTokens.CLIENT_SECRET) // replace CLIENT_SECRET whit a spotify client secret
                     //.setAccessToken(object.getString("token"))
                     .setRedirectUri(new URI("http://raspberrypi:8080/"))
                     .build();
