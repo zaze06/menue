@@ -1,4 +1,5 @@
 # Menue
+(Yes I know it's spelled `menu` lets say it's instinctual) <br>
 A simple little menu/app system meant to be used whit a SSD1306 OLED display and 4+ buttons as inputs.
 
 ## How to use
